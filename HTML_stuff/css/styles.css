@@ -1,0 +1,291 @@
+/*  
+File Name: styles.css
+*/
+
+/*CSS Reset*/
+body, header, nav, main, footer, img, h1, h2{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+
+.tabdesk, #nav-links,.search-icon{
+  display: none;
+}
+
+header{
+  text-align: center;
+  font-size: 1em;
+  background-color: #408c3c;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+body{
+  background-color: #f6eee4;
+  color: #f6eee4;
+}
+
+main p{
+  font-size: 1.25em;
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+main h1{
+  font-size: 3.5em;
+  font-family: 'Lora', serif;
+}
+
+main li{
+  font-size: 20px;
+}
+
+
+nav li a:hover{
+  color: #408c3c;
+}
+
+.profile-icon{
+  display: block;
+  position: absolute;
+  right: 10%;
+  top: 0;
+  color: #f6eee4;
+  padding: 2%;
+}
+
+.profile-icon div{
+  height: 40px;
+  width: 40px;
+  color: #f6eee4; 
+}
+
+
+.mobile-nav ul{
+  margin: 0;
+  text-align: center;
+  background-color: #3c362d;
+}
+
+.mobile-nav li{
+  display: inline-block;
+  font-size: 1.5em;
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: bold;
+}
+
+.mobile-nav a {
+  display: block;
+  color: #f6eee4;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+  text-decoration: none;
+}
+
+.mobile-nav a.nav-icon {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #f6eee4;
+  padding: 2%;
+}
+
+#icon:hover{
+  color: #3c362d;
+}
+
+.nav-icon div { 
+  height: 40px;
+  width: 40px;
+  color: #f6eee4; 
+} 
+
+.mobile-nav2 li a{
+  display: block;
+  color: #f6eee4;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  text-decoration: none;
+}
+
+
+.mobile-nav2 ul{
+  margin: 0;
+  text-align: center;
+  background-color: #3c362d;
+}
+
+.mobile-nav2 li{
+  display: inline-block;
+  font-size: 1.5em;
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: bold;
+}
+
+footer{
+  bottom: 0%;
+  position: fixed;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+.myemail{
+  color: #f6eee4;
+  text-decoration: none;
+}
+
+.myemail:hover{
+  color: red;
+}
+
+.linktext{
+  color: red;
+  text-decoration: underline;
+}
+
+.linktext:hover{
+  text-decoration:none;
+}
+
+
+
+/*Media Query for Tablet Viewport*/
+@media screen and (min-width: 620px){
+
+  .tabdesk{
+    display: inline;
+  }
+
+  .mobile{
+    display: none;
+  }
+
+  .search-icon{
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #f6eee4;
+    padding: 2%;
+  }
+  
+  .search-icon div{
+    height: 40px;
+    width: 40px;
+    color: #f6eee4; 
+  }
+  
+  .profile-icon{
+    display: block;
+    position: absolute;
+    right: 10%;
+    top: 0;
+    color: #f6eee4;
+    padding: 2%;
+  }
+  
+  .profile-icon div{
+    height: 40px;
+    width: 40px;
+    color: #f6eee4; 
+  }
+
+
+
+  nav li a{
+    display: inline-block;
+    color: #f6eee4;
+    padding-top: 100%;
+    padding-bottom: 100%;
+    text-decoration: none;
+  }
+
+
+  nav ul{
+    text-align: center;
+    background-color: #3c362d;
+    margin: 0;
+    padding: 0;
+    width: 10%;
+    height: 100%; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+  }
+  
+  nav li{
+    display: block;
+    font-size: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    white-space: nowrap;
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: bold;
+  }
+  
+  #mobilehead{
+    display: none;
+    padding-bottom: 0%;
+    padding-top: 0%;
+    margin: 0;
+  }
+
+  .mobile-nav{
+    display: none;
+  }
+}
+
+
+/*Media Query for Desktop Viewport*/
+@media screen and (min-width: 1000px){
+
+  .tabdesk{
+    display: inline;
+  }
+
+  .mobile{
+    display: none;
+  }
+
+  #mobilehead{
+    display: none;
+    padding-bottom: 0%;
+    padding-top: 0%;
+  }
+
+  nav li{
+    display: block;
+    font-size: 1em;
+    white-space: nowrap;
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: bold;
+  }
+
+  nav li a{
+    display: inline-block;
+    color: #f6eee4;
+    padding-top: 40%;
+    padding-bottom: 40%;
+    text-decoration: none;
+  }
+
+  .mobile-nav{
+    display: none;
+  }
+
+  main p{
+    font-size: 20px;
+		padding-top: 1%;
+  }
+}
