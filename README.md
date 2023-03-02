@@ -15,4 +15,4 @@ venv module is used to create a virtual environment.
 
 ## Running
 To start the server you must run `python manage.py runserver`. The `manage.py` file is
-in the `site/meal_finder/` folder.
+in the `site/` folder.
