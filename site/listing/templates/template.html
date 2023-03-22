@@ -51,6 +51,22 @@
     </div>
 </main>
 
+<!--
+Margin to the left in order for it to not appear under the nav bar. This doesn't scale well apart from desktop.
+Also, couldn't style it from CSS for some reason, so I did it here.
+-->
+<div style="margin-left: 256px;">
+    <ul style="display: flex; flex-wrap: wrap; list-style-type: none;">
+        {% for food in foods %}
+        <li style="width: 25%; padding: 50px;">
+            <h1>{{ food.name }}</h1>
+            <p>{{ food.description }}</p>
+            <p>Price: ${{ food.price }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
 <footer>
     <nav class="mobile-nav2">
         <div>
