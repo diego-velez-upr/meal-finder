@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 
 <head>
-    <title>Campus Bites: Map</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Food Manager: Template</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo:wght@700&display=swap"
           rel="stylesheet">
     <meta charset="utf-8">
@@ -15,11 +16,11 @@
 <header>
     <h1>CAMPUS BITES</h1>
     <a class="search-icon" onclick="menu()">
-        <div id="icon"><img src="resources/images/search.jpeg" alt="" style="width:100%"></div>
+        <div id="icon"><img src="{% static 'images/search.jpeg' %}" alt="" style="width:100%"></div>
     </a>
 
     <a class="profile-icon" onclick="menu()">
-        <div id="icon"><img src="resources/images/icon.jpeg" alt="" style="width:100%"></div>
+        <div id="icon"><img src="{% static 'images/icon.jpeg' %}" alt="" style="width:100%"></div>
     </a>
 
 
@@ -40,19 +41,19 @@
     <div class="tabdesk">
         <nav>
             <ul>
-                <li><a href="index.html"><img src="resources/images/home.jpeg" alt="" style="width:50%">
+                <li><a href="index.html"><img src="{% static 'images/home.jpeg' %}" alt="" style="width:50%">
                     <figcaption>Home</figcaption>
                 </a></li>
-                <li><a href="offers.html"><img src="resources/images/offers.jpeg" alt="" style="width:50%">
+                <li><a href="offers.html"><img src="{% static 'images/offers.jpeg' %}" alt="" style="width:50%">
                     <figcaption>Offers</figcaption>
                 </a></li>
-                <li><a href="menu.html"><img src="resources/images/menu.jpeg" alt="" style="width:50%">
+                <li><a href="menu.html"><img src="{% static 'images/menu.jpeg' %}" alt="" style="width:50%">
                     <figcaption>Menu</figcaption>
                 </a></li>
-                <li><a href="map.html"><img src="resources/images/map.jpeg" alt="" style="width:50%">
+                <li><a href="map.html"><img src="{% static 'images/map.jpeg' %}" alt="" style="width:50%">
                     <figcaption>Map</figcaption>
                 </a></li>
-                <li><a href="more.html"><img src="resources/images/more.jpeg" alt="" style="width:50%">
+                <li><a href="more.html"><img src="{% static 'images/more.jpeg' %}" alt="" style="width:50%">
                     <figcaption>More</figcaption>
                 </a></li>
             </ul>
@@ -74,7 +75,7 @@
     </nav>
 </footer>
 
-<script src="resources/scripts/script.js"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
 </body>
 </html>
 
