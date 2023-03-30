@@ -1,7 +1,3 @@
-/*  
-File Name: script.js
-*/
-
 //Hamburger menu function
 function menu() {
   var navlinks = document.getElementById("nav-links");

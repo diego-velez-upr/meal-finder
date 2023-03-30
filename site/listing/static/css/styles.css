@@ -1,14 +1,9 @@
-/*  
-File Name: styles.css
-*/
-
 /*CSS Reset*/
 body, header, nav, main, footer, img, h1, h2{
   margin: 0;
   padding: 0;
   border: 0;
 }
-
 
 .tabdesk, #nav-links,.search-icon{
   display: none;
@@ -134,13 +129,6 @@ footer{
   width: 100%;
 }
 
-
-
-
-
-
-
-
 .myemail{
   color: #f6eee4;
   text-decoration: none;
@@ -158,8 +146,6 @@ footer{
 .linktext:hover{
   text-decoration:none;
 }
-
-
 
 /*Media Query for Tablet Viewport*/
 @media screen and (min-width: 620px){
@@ -245,7 +231,6 @@ footer{
     display: none;
   }
 }
-
 
 /*Media Query for Desktop Viewport*/
 @media screen and (min-width: 1000px){
