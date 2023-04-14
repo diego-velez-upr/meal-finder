@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.shortcuts import redirect, render
+from meal_finder import settings
 
 
 # Create your views here.
@@ -50,12 +51,14 @@ def signup(request):
 
         # Welcome Email
 
-        subject = "Welcome to Meal Finder!"
-        message = "Hello " + myuser.first_name + "!! \n" + "Thank you for using MealFinder \n We sent you a confirmation email, please confirm your email address in order to activate your account"
-        to_list = [myuser.email]
+        subject = "Welcome to College Bites!"
+        message = "Hello " + myuser.first_name + "!! \n" + "Thank you for using College Bites \n We sent you a confirmation email, please confirm your email address in order to activate your account"
         # BUG: Infinitely loads then crashes because host email doesn't exist
-        send_mail(subject, message, None, to_list, fail_silently=False)
-
+        # REPLY: Added again for testing
+        from_email = settings.EMAIL_HOST_USER
+        to_list = [myuser.email]
+        send_mail(subject, message, from_email, to_list, fail_silently=True)
+        # Potential bugs: from_email and to_list line above
         return redirect('signin')
 
     return render(request, "signup.html")  # Enters the signup page
@@ -72,7 +75,7 @@ def signin(request):
         if user is not None:  # If the user is authenticated, do the login
             login(request, user)
             fname = user.first_name
-            return render(request, "index.html", {'fname': fname})
+            return render(request, "template.html")
 
         else:
             messages.error(request, "Bad Credentials")
