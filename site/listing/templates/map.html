@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <title>Campus Bites: Map</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo:wght@700&display=swap"
+          rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<header>
+    <h1>CAMPUS BITES</h1>
+    <a class="search-icon" onclick="menu()">
+        <div id="icon"><img src="{% static 'images/search.jpeg' %}" alt="" style="width:100%"></div>
+    </a>
+
+    <a class="profile-icon" onclick="menu()">
+        <div id="icon"><img src="{% static 'images/icon.jpeg' %}" alt="" style="width:100%"></div>
+    </a>
+
+
+    <nav class="mobile-nav">
+        <div id="nav-links">
+            <ul>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <a class="nav-icon" onclick="menu()">
+            <div id="icon">&#9776;</div>
+        </a>
+    </nav>
+</header>
+
+<main>
+    <div class="tabdesk">
+        <nav>
+            <ul>
+                <li><a href="/"><img src="{% static 'images/home.jpeg' %}" alt="" style="width:50%">
+                    <figcaption>Home</figcaption>
+                </a></li>
+                <li><a href="offers.html"><img src="{% static 'images/offers.jpeg' %}" alt="" style="width:50%">
+                    <figcaption>Offers</figcaption>
+                </a></li>
+                <li><a href="menu.html"><img src="{% static 'images/menu.jpeg' %}" alt="" style="width:50%">
+                    <figcaption>Menu</figcaption>
+                </a></li>
+                <li><a href="map.html"><img src="{% static 'images/map.jpeg' %}" alt="" style="width:50%">
+                    <figcaption>Map</figcaption>
+                </a></li>
+                <li><a href="more.html"><img src="{% static 'images/more.jpeg' %}" alt="" style="width:50%">
+                    <figcaption>More</figcaption>
+                </a></li>
+            </ul>
+        </nav>
+    </div>
+</main>
+
+<footer>
+    <nav class="mobile-nav2">
+        <div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="offers.html">Offers</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="search.html">Search</a></li>
+            </ul>
+        </div>
+    </nav>
+</footer>
+
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
+
