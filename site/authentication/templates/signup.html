@@ -7,46 +7,46 @@
     <title>Document</title>
 </head>
 <body>
-    
-    {% for message in messages%}
-    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert"> 
+
+{% for message in messages%}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
     <strong>Mesage:</strong>{{ message }}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"
-    <span aria-hidden="true">&times;</span> 
+    <span aria-hidden="true">&times;</span>
     </button>
-    </div>
-    {% endfor %}
+</div>
+{% endfor %}
 
-    <h3>Sign Up</h3>
+<h3>Sign Up</h3>
 
-    <form action="/auth/signup/" method="post">
+<form action="/auth/signup/" method="post">
     {% csrf_token %}
-        <label>Username</label>
-        <input type="text" id="username" name="username" placeholder="Create a username" Required>
-        <br>
+    <label>Username</label>
+    <input type="text" id="username" name="username" placeholder="Create a username" Required>
+    <br>
 
-        <label>First Name</label>
-        <input type="text" id="fname" name="fname" placeholder="Enter your First Name" Required>
-        <br>
+    <label>First Name</label>
+    <input type="text" id="first_name" name="first_name" placeholder="Enter your First Name" Required>
+    <br>
 
-        <label>Last Name</label>
-        <input type="text" id="lname" name="lname" placeholder="Enter your Last Name" Required>
-        <br>
+    <label>Last Name</label>
+    <input type="text" id="last_name" name="last_name" placeholder="Enter your Last Name" Required>
+    <br>
 
-        <label>Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" Required>
-        <br>
+    <label>Email Address</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" Required>
+    <br>
 
-        <label>Password</label>
-        <input type="password" id="pass1" name="pass1" placeholder="Create a password" Required>
-        <br>
+    <label>Password</label>
+    <input type="password" id="pass1" name="pass1" placeholder="Create a password" Required>
+    <br>
 
-        <label>Confirm your Password</label>
-        <input type="password" id="pass2" name="pass2" placeholder="Confirm your password" Required>
-        <br>
-        
-        <button type="submit"> Sign Up</button>
-    </form>
-    
+    <label>Confirm your Password</label>
+    <input type="password" id="pass2" name="pass2" placeholder="Confirm your password" Required>
+    <br>
+
+    <button type="submit"> Sign Up</button>
+</form>
+
 </body>
 </html>
