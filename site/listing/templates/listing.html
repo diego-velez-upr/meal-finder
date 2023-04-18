@@ -14,13 +14,13 @@
 <body>
 
 <header>
-    <h1>NAME</h1>
+    <h1>CAMPUS BITES</h1>
     <a class="search-icon" onclick="menu()">
-        <div id="icon">search-icon</div>
+        <div id="icon"><img src="{% static 'images/search.jpeg' %}" alt="" style="width:100%"></div>
     </a>
 
     <a class="profile-icon" onclick="menu()">
-        <div id="icon">profile-icon</div>
+        <div id="icon"><img src="{% static 'images/icon.jpeg' %}" alt="" style="width:100%"></div>
     </a>
 
 
@@ -41,37 +41,31 @@
     <div class="tabdesk">
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="offers.html">Offers</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="map.html">Map</a></li>
-                <li><a href="more.html">More</a></li>
+                <li><a href=""><img src="{% static 'images/home.jpeg' %}" alt="" style="width:50%">
+                    <figcaption>Home</figcaption>
+                </a></li>
+                <li><a href="offers.html"><img src="{% static 'images/offers.jpeg' %}" alt="" style="width:50%">
+                    <figcaption>Offers</figcaption>
+                </a></li>
+                <li><a href="menu.html"><img src="{% static 'images/menu.jpeg' %}" alt="" style="width:50%">
+                    <figcaption>Menu</figcaption>
+                </a></li>
+                <li><a href="map.html"><img src="{% static 'images/map.jpeg' %}" alt="" style="width:50%">
+                    <figcaption>Map</figcaption>
+                </a></li>
+                <li><a href="more.html"><img src="{% static 'images/more.jpeg' %}" alt="" style="width:50%">
+                    <figcaption>More</figcaption>
+                </a></li>
             </ul>
         </nav>
     </div>
 </main>
 
-<!--
-Margin to the left in order for it to not appear under the nav bar. This doesn't scale well apart from desktop.
-Also, couldn't style it from CSS for some reason, so I did it here.
--->
-<div style="margin-left: 256px;">
-    <ul style="display: flex; flex-wrap: wrap; list-style-type: none;">
-        {% for food in foods %}
-        <li style="width: 25%; padding: 50px;">
-            <h1>{{ food.name }}</h1>
-            <p>{{ food.description }}</p>
-            <p>Price: ${{ food.price }}</p>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
-
 <footer>
     <nav class="mobile-nav2">
         <div>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="offers.html">Offers</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="map.html">Map</a></li>
@@ -84,4 +78,3 @@ Also, couldn't style it from CSS for some reason, so I did it here.
 <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
-
