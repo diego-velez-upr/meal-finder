@@ -1,3 +1,7 @@
+/*  
+File Name: styles.css
+*/
+
 /*CSS Reset*/
 body, header, nav, main, footer, img, h1, h2{
   margin: 0;
@@ -5,9 +9,54 @@ body, header, nav, main, footer, img, h1, h2{
   border: 0;
 }
 
+
 .tabdesk, #nav-links,.search-icon{
   display: none;
 }
+
+table{
+  color: #f6eee4;
+  margin-left: 15%;
+  width: 85%;
+  padding-top: 6.7%;
+}
+
+
+td {
+  padding: 5%;
+}
+
+.square {
+  height: 220px;
+  width: 250px;
+  background-color: #E7BD80; 
+  border-radius: 20%;
+}
+
+.tbgray{
+  background-color: #D9D9D9; 
+  color: #3c362d;
+  position: relative;
+  top: 70%; 
+  height: 20%;
+  border-radius: 30%;
+  width: 100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.tbgreen{
+  text-align: center;
+  background-color: #408c3c; 
+  position: relative; 
+  top: 72%; 
+  width: 70%;
+  margin-left: 15%;
+  border-radius: 40%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
 
 header{
   text-align: center;
@@ -15,7 +64,11 @@ header{
   background-color: #408c3c;
   padding-top: 2%;
   padding-bottom: 2%;
-}
+  width: 100%;
+  position: fixed; /* Make it stick, even on scroll */
+  z-index: 5;
+  }
+  
 
 body{
   background-color: #f6eee4;
@@ -31,6 +84,13 @@ main h1{
   font-size: 3.5em;
   font-family: 'Lora', serif;
 }
+
+main h2{
+
+  font-family: 'Lora', serif;
+  color: #3c362d;
+}
+
 
 main li{
   font-size: 20px;
@@ -129,6 +189,13 @@ footer{
   width: 100%;
 }
 
+
+
+
+
+
+
+
 .myemail{
   color: #f6eee4;
   text-decoration: none;
@@ -146,6 +213,8 @@ footer{
 .linktext:hover{
   text-decoration:none;
 }
+
+
 
 /*Media Query for Tablet Viewport*/
 @media screen and (min-width: 620px){
@@ -193,8 +262,8 @@ footer{
   nav li a{
     display: inline-block;
     color: #f6eee4;
-    padding-top: 100%;
-    padding-bottom: 100%;
+    padding-top: 50%;
+    padding-bottom: 50%;
     text-decoration: none;
   }
 
@@ -203,6 +272,8 @@ footer{
     text-align: center;
     background-color: #3c362d;
     margin: 0;
+    margin-right: 1%;
+    margin-top: 6.7%;
     padding: 0;
     width: 10%;
     height: 100%; /* Full height */
@@ -232,6 +303,7 @@ footer{
   }
 }
 
+
 /*Media Query for Desktop Viewport*/
 @media screen and (min-width: 1000px){
 
@@ -260,8 +332,8 @@ footer{
   nav li a{
     display: inline-block;
     color: #f6eee4;
-    padding-top: 40%;
-    padding-bottom: 40%;
+    padding-top: 15%;
+    padding-bottom: 15%;
     text-decoration: none;
   }
 
