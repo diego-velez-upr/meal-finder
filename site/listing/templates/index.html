@@ -62,113 +62,23 @@
     </div>
 
     <table>
+        {% for food_list in foods %}
         <tr>
+            {% for food in food_list %}
             <td>
                 <div class="square">
                     <figcaption class="tbgray">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Food Name: <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price:
-                        $$$
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Food Name: {{ food.name }}<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price:
+                        ${{ food.price }}
                     </figcaption>
                     <figcaption class="tbgreen">
                         Click here for more!
                     </figcaption>
                 </div>
             </td>
-            <td>
-                <div class="square">
-                    <figcaption class="tbgray">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Food Name: <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price:
-                        $$$
-                    </figcaption>
-                    <figcaption class="tbgreen">
-                        Click here for more!
-                    </figcaption>
-                </div>
-            </td>
-            <td>
-                <div class="square">
-                    <figcaption class="tbgray">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Food Name: <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price:
-                        $$$
-                    </figcaption>
-                    <figcaption class="tbgreen">
-                        Click here for more!
-                    </figcaption>
-                </div>
-            </td>
-
+            {% endfor %}
         </tr>
-        <tr>
-            <td>
-                <div class="square">
-                    <figcaption class="tbgray">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Food Name: <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price:
-                        $$$
-                    </figcaption>
-                    <figcaption class="tbgreen">
-                        Click here for more!
-                    </figcaption>
-                </div>
-            </td>
-            <td>
-                <div class="square">
-                    <figcaption class="tbgray">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Food Name: <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price:
-                        $$$
-                    </figcaption>
-                    <figcaption class="tbgreen">
-                        Click here for more!
-                    </figcaption>
-                </div>
-            </td>
-            <td>
-                <div class="square">
-                    <figcaption class="tbgray">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Food Name: <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price:
-                        $$$
-                    </figcaption>
-                    <figcaption class="tbgreen">
-                        Click here for more!
-                    </figcaption>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="square">
-                    <figcaption class="tbgray">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Food Name: <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price:
-                        $$$
-                    </figcaption>
-                    <figcaption class="tbgreen">
-                        Click here for more!
-                    </figcaption>
-                </div>
-            </td>
-            <td>
-                <div class="square">
-                    <figcaption class="tbgray">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Food Name: <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price:
-                        $$$
-                    </figcaption>
-                    <figcaption class="tbgreen">
-                        Click here for more!
-                    </figcaption>
-                </div>
-            </td>
-            <td>
-                <div class="square">
-                    <figcaption class="tbgray">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Food Name: <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price:
-                        $$$
-                    </figcaption>
-                    <figcaption class="tbgreen">
-                        Click here for more!
-                    </figcaption>
-                </div>
-            </td>
-
-        </tr>
+        {% endfor %}
     </table>
 
 </main>
