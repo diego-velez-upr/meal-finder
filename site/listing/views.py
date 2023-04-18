@@ -19,10 +19,6 @@ def index(request):
     return render(request, 'index.html', context)
 
 
-def listing(request):
-    return render(request, 'listing.html')
-
-
 def offers(request):
     return render(request, 'offers.html')
 
