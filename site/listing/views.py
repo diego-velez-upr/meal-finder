@@ -1,11 +1,22 @@
 from django.shortcuts import render
+from .models import Food
 
 
 def index(request):
-    return render(request, 'index.html')
+    """
+    The view of the '/' url.
+    """
 
-def listing(request):
-    return render(request, 'listing.html')
+    foods = Food.objects.all()
+    # Divides the list of foods into a list of a list of foods, where each inner list has 3 food items.
+    # This is done in order to be able to use the html templates easily.
+    total = [foods[food_stop - 3:food_stop:] for food_stop in range(3, len(foods), 3)]
+
+    context = {
+        "foods": total
+    }
+
+    return render(request, 'index.html', context)
 
 
 def offers(request):

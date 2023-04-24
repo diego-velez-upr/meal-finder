@@ -2,6 +2,7 @@
 {% load static %}
 <html lang="en">
 
+
 <head>
     <title>CAMPUS BITES: Home</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
@@ -41,7 +42,7 @@
     <div class="tabdesk">
         <nav>
             <ul>
-                <li><a href="/"><img src="{% static 'images/home.jpeg' %}" alt="" style="width:50%">
+                <li><a href=""><img src="{% static 'images/home.jpeg' %}" alt="" style="width:50%">
                     <figcaption>Home</figcaption>
                 </a></li>
                 <li><a href="offers.html"><img src="{% static 'images/offers.jpeg' %}" alt="" style="width:50%">
@@ -59,13 +60,34 @@
             </ul>
         </nav>
     </div>
+
+    <table>
+        {% for food_list in foods %}
+        <tr>
+            {% for food in food_list %}
+            <td>
+                <div class="square">
+                    <figcaption class="tbgray">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Food Name: {{ food.name }}<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price:
+                        ${{ food.price }}
+                    </figcaption>
+                    <figcaption class="tbgreen">
+                        Click here for more!
+                    </figcaption>
+                </div>
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
 </main>
 
 <footer>
     <nav class="mobile-nav2">
         <div>
             <ul>
-                <li><a href="/">Home</a></li>
+                <li><a href="">Home</a></li>
                 <li><a href="offers.html">Offers</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="map.html">Map</a></li>
@@ -78,3 +100,4 @@
 <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
+
