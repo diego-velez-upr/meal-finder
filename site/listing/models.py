@@ -8,9 +8,17 @@ class Food(models.Model):
     name = models.TextField()
     description = models.TextField()
     price = models.FloatField()
+    _tags = models.TextField(default='')
 
     def __str__(self):
         """
         This is how each food will be displayed in the admin page.
         """
         return self.name
+
+    @property
+    def tags(self):
+        """
+        Gets the list of tags of this food.
+        """
+        return self._tags.split(',')
