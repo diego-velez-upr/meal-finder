@@ -32,14 +32,16 @@ def sign_up(request):
         # TODO: doesn't seem to do anything
         if len(username) > 10:
             messages.error(request, "Username must be under 10 characters!")
+            return redirect('signup') #  Django only permits 30 character usernames but to keep it more clean a 10 character limit is forced
 
         # BUG: Crashes when passwords are not the same
         if pass1 != pass2:
             messages.error(request, "Passwords do not match!")
+            return redirect('signup')
 
         if not username.isalnum():
             messages.error(request, "Username must be alphanumeric!")
-            return redirect('home')
+            return redirect('signup')
 
         # Create user and save to database
         user = User.objects.create_user(username, email, pass1)
