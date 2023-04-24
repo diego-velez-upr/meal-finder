@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Food
 
 
-def index(request):
+def listing(request):
     """
     The view of the '/' url.
     """
@@ -21,7 +21,7 @@ def index(request):
         "foods": total
     }
 
-    return render(request, 'index.html', context)
+    return render(request, 'listing.html', context)
 
 
 def offers(request):
