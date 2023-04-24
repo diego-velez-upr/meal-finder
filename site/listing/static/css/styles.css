@@ -58,14 +58,10 @@ td {
 }
 
 .map{
-  background-image: url("cssimages/mapcss.png");
   width:90%;
   margin-left: 10%;
   margin-top: 6%;
   box-sizing:border-box;
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-position:center center;
 }
 
 
