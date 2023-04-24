@@ -9,7 +9,7 @@ def search_food(foods: List[Food], keyword: str) -> Set[Food]:
     foods_found = set()
 
     for food in foods:
-        if keyword.lower() in food.tags or keyword.lower() in food.name.lower():
+        if keyword.lower() in food.tags or keyword.lower() in food.name.lower() or keyword.lower() in food.description:
             foods_found.add(food)
 
     return foods_found
