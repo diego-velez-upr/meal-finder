@@ -8,7 +8,7 @@ from django.shortcuts import redirect, render
 
 # Create your views here.
 def home(request):
-    return render(request, "index.html")
+    return render(request, "authentication.html")
 
 
 def sign_up(request):
@@ -72,14 +72,14 @@ def sign_in(request):
         # If the user is not authenticated, it will return a None variable
         user = authenticate(username=username, password=password)
 
-        # If the user successfully authenticated, then log the user and redirect to listing page,
-        # otherwise redirect back to authentication page
-        if user is not None:
-            login(request, user)
-            return redirect('/')
-        else:
+        # If the user failed to log in, then redirect back to authentication page, otherwise log the user in
+        # and redirect to listing page
+        if user is None:
             messages.error(request, "Bad Credentials")
             return redirect('home')
+
+        login(request, user)
+        return redirect('/')
 
     return render(request, "signin.html")
 
