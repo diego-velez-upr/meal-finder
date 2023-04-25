@@ -53,10 +53,10 @@ def sign_up(request):
         subject = "Welcome to College Bites!"
         message = "Hello " + user.first_name + "!! \n" + "Thank you for using College Bites \n We sent you a confirmation email, please confirm your email address in order to activate your account"
         # BUG: Infinitely loads then crashes because host email doesn't exist
-        recipient_list = [user.email]
-        send_mail(subject, message, None, recipient_list, fail_silently=False)
+        #recipient_list = [user.email]
+       #send_mail(subject, message, None, recipient_list, fail_silently=False)
 
-        messages.success(request, "Your account has been successfully created! We have sent you a confirmation email, please confirm your email in order to activate your account")
+        messages.success(request, "Your account has been successfully created!")
 
         return redirect('signin')
 
