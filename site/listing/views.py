@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Food
+from authentication.views import sign_out
 
 
 def listing(request):
@@ -50,3 +51,4 @@ def more(request):
 
 def search(request):
     return render(request, 'search.html')
+
