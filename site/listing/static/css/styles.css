@@ -103,11 +103,6 @@ main li{
   font-size: 20px;
 }
 
-.sign-out-button:hover {
-  background-color: #ff4d4d;
-  color: rgb(255, 255, 255);
-}
-
 
 nav li a:hover{
   color: #408c3c;
@@ -201,6 +196,8 @@ footer{
   width: 100%;
 }
 
+
+
 .myemail{
   color: #f6eee4;
   text-decoration: none;
@@ -217,6 +214,11 @@ footer{
 
 .linktext:hover{
   text-decoration:none;
+}
+
+.firstname {
+  color: white;
+  text-shadow: 1px 1px black;
 }
 
 

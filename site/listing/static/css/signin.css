@@ -76,5 +76,11 @@ body {
     text-shadow: 1px 1px 2px black;
   }
 
+  .error-message {
+    color: red;
+    font-weight: bold;
+  }
+  
+
   
   

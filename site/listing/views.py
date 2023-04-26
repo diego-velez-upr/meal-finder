@@ -1,5 +1,15 @@
 from django.shortcuts import render, redirect
 from .models import Food
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+
+
+
+@login_required
+def my_page(request):
+    user = request.user
+    return render(request, 'listing.html', {'user': user})
+
 
 
 def listing(request):
