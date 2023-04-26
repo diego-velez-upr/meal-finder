@@ -1,8 +1,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    color: white;
     background-image: url("../images/bckgrnd.jpeg");
+    color: white;
     background-size: cover; /* resize the image to cover the entire container */
     background-position: center;
 }
