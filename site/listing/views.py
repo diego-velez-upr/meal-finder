@@ -1,11 +1,17 @@
+from django.shortcuts import redirect
 from django.shortcuts import render
 from .models import Food
 
 
-def index(request):
+def listing(request):
     """
     The view of the '/' url.
     """
+
+    # Check if the user is already logged in, redirect to authentication page if not.
+    if not request.user.is_authenticated:
+        print('User is not logged in')
+        return redirect('/auth/')
 
     foods = Food.objects.all()
     # Divides the list of foods into a list of a list of foods, where each inner list has 3 food items.
@@ -16,7 +22,7 @@ def index(request):
         "foods": total
     }
 
-    return render(request, 'index.html', context)
+    return render(request, 'listing.html', context)
 
 
 def offers(request):

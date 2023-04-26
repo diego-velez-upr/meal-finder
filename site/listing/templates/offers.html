@@ -41,6 +41,10 @@
 
     <a class="profile-icon" onclick="menu()">
         <div id="icon"><img src="{% static 'images/icon.jpeg' %}" alt="" style="width:100%"></div>
+        <!-- Makes the first name of the user appear below the user icon -->
+        <div class="firstname"> 
+            {{ user.first_name }}
+        </div>
     </a>
 
 
@@ -76,6 +80,10 @@
                 <li><a href="more.html"><img src="{% static 'images/more.jpeg' %}" alt="" style="width:50%">
                     <figcaption>More</figcaption>
                 </a></li>
+                <li>
+                    <!-- Signout. -->
+                    <button type="submit" class="sign-out-button"><a href="/auth/signout/">Sign Out</a></button>
+                </a></li>
             </ul>
         </nav>
     </div>
@@ -95,7 +103,6 @@
     </nav>
 </footer>
 
-<script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
 
