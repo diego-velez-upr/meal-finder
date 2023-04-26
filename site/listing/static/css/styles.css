@@ -398,7 +398,7 @@ footer{
 
   .filter-container {
     position: fixed;
-    top: 100px;
+    top: 7%;
     left: 12%;
     right: 2%;
     background-color: #D9D9D9;
@@ -407,7 +407,7 @@ footer{
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    padding:20px;
+    padding:.9%;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: auto auto;
     grid-row-gap: 10px;
