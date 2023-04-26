@@ -19,20 +19,14 @@
 </div>
 {% endfor %}
 
-<h3>Welcome to College Bites!</h3>
+<div class="text-background">
+    <h3>Welcome to College Bites</h3>
+  </div>
 
-
-{% if user.is_authenticated %}
-<h3>Hello {{ user.first_name }}</h3>
-<h4>You are successfully logged in!</h4>
-<button type="submit"><a href="/auth/signout/">SignOut</a></button>
-
-
-{% else %}
-<button type="submit"><a href="/auth/signup">SignUp</a></button>
-<button type="submit"><a href="/auth/signin">SignIn</a></button>
-
-{% endif %}
-
+<div class="button-container">
+    <button type="submit"><a href="/auth/signup">SignUp</a></button>
+    <button type="submit"><a href="/auth/signin">SignIn</a></button>
+</div>
+  
 </body>
 </html>
