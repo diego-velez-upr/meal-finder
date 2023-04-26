@@ -3,7 +3,6 @@
 body {
     font-family: Arial, sans-serif;
     color: white;
-    background-image: url("../images/bckgrnd.jpeg");
     background-size: cover; /* resize the image to cover the entire container */
     background-position: center;
 }
@@ -88,7 +87,7 @@ input {
 
 button {
     border: none;
-    background-color: #148f77;
+    background-color: #408c3c;
     color: #fff;
     padding: 12px 20px;
     margin: 10px auto;
@@ -99,7 +98,7 @@ button {
 }
 
 button:hover {
-    background-color: #10725e;
+    background-color: #408c3c;
 }
 
 /* Styling for the link */
@@ -116,7 +115,7 @@ button[type="submit"] {
     display: block;
     margin: 0 auto;
     color: white;
-    background-color: #148f77;
+    background-color: #408c3c;
     padding: 12px 20px;
     margin-top: 20px;
     border: none;
@@ -126,7 +125,7 @@ button[type="submit"] {
   }
   
   button[type="submit"]:hover {
-    background-color: #106655;
+    background-color: #408c3c;
   }
 
 .redirect {
