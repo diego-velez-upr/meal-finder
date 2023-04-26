@@ -198,11 +198,6 @@ footer{
 
 
 
-
-
-
-
-
 .myemail{
   color: #f6eee4;
   text-decoration: none;
@@ -219,6 +214,11 @@ footer{
 
 .linktext:hover{
   text-decoration:none;
+}
+
+.firstname {
+  color: white;
+  text-shadow: 1px 1px black;
 }
 
 
@@ -297,6 +297,23 @@ footer{
     font-family: 'Nanum Myeongjo', serif;
     font-weight: bold;
   }
+
+  .sign-out-button {
+    background-color: #ff6666;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+  
+  
   
   #mobilehead{
     display: none;

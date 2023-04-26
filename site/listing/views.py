@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
+from django.shortcuts import render
 from .models import Food
 
 
@@ -50,4 +51,3 @@ def more(request):
 
 def search(request):
     return render(request, 'search.html')
-

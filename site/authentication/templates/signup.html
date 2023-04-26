@@ -1,11 +1,14 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    </head>
 <body>
 
 {% for message in messages%}
@@ -44,13 +47,14 @@
     <label>Confirm your Password</label>
     <input type="password" id="pass2" name="pass2" placeholder="Confirm your password" Required>
     <br>
-
     <button type="submit"> Sign Up</button>
+    <label class="redirect">Already have an account? </label>
+    <button class="redirbutton" type="submit"><a href="/auth/signin">Sign In</a></button>
+
 </form>
 
 
-<label>Already have an account? </label>
-<button type="submit"><a href="/auth/signin">SignIn</a></button>
+
 
 </body>
 </html>
