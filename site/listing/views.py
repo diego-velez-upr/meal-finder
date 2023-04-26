@@ -1,15 +1,6 @@
-from django.shortcuts import render, redirect
-from .models import Food
+from django.shortcuts import redirect
 from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
-
-
-
-@login_required
-def my_page(request):
-    user = request.user
-    return render(request, 'listing.html', {'user': user})
-
+from .models import Food
 
 
 def listing(request):
@@ -60,4 +51,3 @@ def more(request):
 
 def search(request):
     return render(request, 'search.html')
-
