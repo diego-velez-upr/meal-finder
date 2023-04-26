@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from .models import Food
-from authentication.views import sign_out
 
 
 def listing(request):

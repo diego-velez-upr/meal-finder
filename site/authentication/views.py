@@ -1,8 +1,6 @@
-from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from django.core.mail import send_mail
 from django.shortcuts import redirect, render
 
 
@@ -29,12 +27,11 @@ def sign_up(request):
             messages.error(request, "Email already registered!")
             return redirect('home')
 
-        # TODO: doesn't seem to do anything
+        # Django only permits 30 character usernames but to keep it more clean a 10 character limit is forced
         if len(username) > 10:
             messages.error(request, "Username must be under 10 characters!")
-            return redirect('signup') #  Django only permits 30 character usernames but to keep it more clean a 10 character limit is forced
+            return redirect('signup')
 
-        # BUG: Crashes when passwords are not the same
         if pass1 != pass2:
             messages.error(request, "Passwords do not match!")
             return redirect('signup')
@@ -48,14 +45,6 @@ def sign_up(request):
         user.first_name = first_name
         user.last_name = last_name
         user.save()
-
-        # Welcome Email
-        subject = "Welcome to College Bites!"
-        message = "Hello " + user.first_name + "!! \n" + "Thank you for using College Bites \n We sent you a confirmation email, please confirm your email address in order to activate your account"
-        # BUG: Infinitely loads then crashes because host email doesn't exist
-        # Reply: Also I think it makes it crash, maybe sending an email for verification isnt viable at this stage of the project? I commented the lines that made signing in work.
-        #recipient_list = [user.email]
-        #send_mail(subject, message, None, recipient_list, fail_silently=False)
 
         messages.success(request, "Your account has been successfully created!")
 
