@@ -1,6 +1,31 @@
 from django.shortcuts import redirect
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 from .models import Food
+from .utils.food_utils import search_food
+from .utils.list_utils import divide_into_sublist
+
+
+@csrf_exempt
+def apply_filters(request):
+    """
+    Used when updating the food filters, returns the HTML of the table that contains the food with the filter applied.
+    """
+
+    foods = Food.objects.all()
+    filters = request.GET.get('filters')
+
+    # Check if there are filters applied
+    if filters is not None:
+        foods = search_food(foods, filters, delimiter=',')
+
+    divided_foods = divide_into_sublist(foods, 3)
+
+    context = {
+        "foods": divided_foods
+    }
+
+    return render(request, 'table_list.html', context)
 
 
 def listing(request):
@@ -16,10 +41,10 @@ def listing(request):
     foods = Food.objects.all()
     # Divides the list of foods into a list of a list of foods, where each inner list has 3 food items.
     # This is done in order to be able to use the html templates easily.
-    total = [foods[food_stop - 3:food_stop:] for food_stop in range(3, len(foods), 3)]
+    divided_foods = divide_into_sublist(foods, 3)
 
     context = {
-        "foods": total
+        "foods": divided_foods
     }
 
     return render(request, 'listing.html', context)
