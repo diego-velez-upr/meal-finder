@@ -24,9 +24,3 @@ class Food(models.Model):
         Gets the list of tags of this food.
         """
         return self._tags.split(',')
-
-    class FoodEncoder(json.JSONEncoder):
-        def default(self, obj):
-            if isinstance(obj, Food):
-                return str(obj)
-            return super().default(obj)
