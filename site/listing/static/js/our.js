@@ -10,41 +10,49 @@ function menu() {
             menuicon.style.color = "#f6eee4";
             header.style.color = "#f6eee4"
         }
-        
+
         else {
             navlinks.style.display = "block";
             header.style.color = "#3c362d"
         }
-    
+
 }
 
 var selectedFilters = [];
-var yes = "yes";
-
 
 function buttonClick(name) {
     const button = document.getElementById(name);
-        
-    console.log('Button clicked!');
-    console.log(button.id);
-    console.log('in');
 
-    if(button.classList.contains('active')){
-        console.log('Deactivated...');
+    if (button.classList.contains('active')) {
+        console.log('Removed ' + button.id + ' filter!');
         button.classList.remove('active')
-        for(var i = 0; i < selectedFilters.length; i++){ 
-
+        for(var i = 0; i < selectedFilters.length; i++){
             if ( selectedFilters[i] === button.textContent.toLowerCase()) { 
                 selectedFilters.splice(i, 1); 
             }
         }
-
-    }else{
-        console.log('Activated...');
+    } else {
+        console.log('Applied ' + button.id + ' filter!');
         button.classList.add('active');
         selectedFilters.push(button.textContent.toLowerCase())
-    }         
-    console.log(selectedFilters.length)
+    }
+
+    var xhr = new XMLHttpRequest();
+    // Pass the selected filters to the python view updater
+    xhr.open("GET", "apply_filters?filters=" + selectedFilters, true);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.onload = function() {
+        // Received successful response
+        if (xhr.status === 200) {
+            // Get div where table of food goes
+            var div = document.getElementById("listing-table");
+            // Update food slots
+            div.innerHTML = xhr.responseText;
+        } else {
+            console.log("Request failed. Returned status code: " + xhr.status);
+        }
+    };
+    xhr.send();
   }
 
 

@@ -10,4 +10,5 @@ urlpatterns = [
     path('menu.html', views.menu, name='menu'),
     path('more.html', views.more, name='more'),
     path('search.html', views.search, name='search'),
+    path('apply_filters', views.apply_filters, name='apply_filters'),
 ]

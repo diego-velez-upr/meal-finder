@@ -87,26 +87,9 @@
         </nav>
     </div>
 
-
-    <table>
-        {% for food_list in foods %}
-        <tr>
-            {% for food in food_list %}
-            <td>
-                <div class="square">
-                    <figcaption class="tbgray">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ food.name }}<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price:
-                        ${{ food.price }}
-                    </figcaption>
-                    <figcaption class="tbgreen">
-                        Click here for more!
-                    </figcaption>
-                </div>
-            </td>
-            {% endfor %}
-        </tr>
-        {% endfor %}
-    </table>
+    <div id="listing-table">
+        {% include 'table_list.html' %}
+    </div>
 
 </main>
 
@@ -124,7 +107,7 @@
     </nav>
 </footer>
 
-<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/our.js' %}"></script>
 </body>
 </html>
 
