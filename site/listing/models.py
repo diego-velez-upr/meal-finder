@@ -9,6 +9,7 @@ class Food(models.Model):
     description = models.TextField()
     price = models.FloatField()
     _tags = models.TextField(default='')
+    image = models.ImageField()
 
     def __str__(self):
         """
