@@ -5,15 +5,31 @@
 
 <head>
     <title>CAMPUS BITES: Home</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/our.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo:wght@700&display=swap"
           rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 
 <body>
+
+
+<div class="filter-container">
+    <button id="vegetarian-button" class="filter-button" onclick='buttonClick("vegetarian-button")'>Vegetarian</button>
+    <button id="vegan-button" class="filter-button" onclick='buttonClick("vegan-button")'>Vegan</button>
+    <button id="glutten-button" class="filter-button" onclick='buttonClick("glutten-button")'>Gluten-Free</button>
+    <button id="PR-button" class="filter-button" onclick="buttonClick('PR-button')">Puertorican</button>
+    <button id='pasta-button' class="filter-button" onclick="buttonClick('pasta-button')">Pasta</button>
+    <button id='burgers-button' class="filter-button" onclick="buttonClick('burgers-button')">Burgers</button>
+    <button id='sandwich-button' class="filter-button" onclick="buttonClick('sandwich-button')">Sandwiches</button>
+    <button id='chicken-button' class="filter-button" onclick="buttonClick('chicken-button')">Chicken</button>
+    <button id='fish-button' class="filter-button" onclick="buttonClick('fish-button')">Fish</button>
+    <button id='pork-button' class="filter-button" onclick="buttonClick('pork-button')">Pork</button>
+    <button id='meren-button' class="filter-button" onclick="buttonClick('meren-button')">Merendero Colegial</button>
+    <button id='come-button' class="filter-button" onclick="buttonClick('come-button')">Comedero Colegial</button>
+
+</div>
 
 <header>
     <h1>WELCOME TO CAMPUS BITES!</h1>
@@ -21,14 +37,14 @@
         <div id="icon"><img src="{% static 'images/search.jpeg' %}" alt="" style="width:100%"></div>
     </a>
 
+
     <a class="profile-icon" onclick="menu()">
         <div id="icon"><img src="{% static 'images/icon.jpeg' %}" alt="" style="width:100%"></div>
         <!-- Makes the first name of the user appear below the user icon -->
-        <div class="firstname"> 
+        <div class="firstname">
             {{ user.first_name }}
         </div>
     </a>
-    
 
 
     <nav class="mobile-nav">
@@ -66,30 +82,14 @@
                 <li>
                     <!-- Signout. -->
                     <button type="submit" class="sign-out-button"><a href="/auth/signout/">Sign Out</a></button>
-                </a></li>
+                    </a></li>
             </ul>
         </nav>
     </div>
 
-    <table>
-        {% for food_list in foods %}
-        <tr>
-            {% for food in food_list %}
-            <td>
-                <div class="square">
-                    <figcaption class="tbgray">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Food Name: {{ food.name }}<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price:
-                        ${{ food.price }}
-                    </figcaption>
-                    <figcaption class="tbgreen">
-                        Click here for more!
-                    </figcaption>
-                </div>
-            </td>
-            {% endfor %}
-        </tr>
-        {% endfor %}
-    </table>
+    <div id="listing-table">
+        {% include 'table_list.html' %}
+    </div>
 
 </main>
 
@@ -107,7 +107,7 @@
     </nav>
 </footer>
 
-<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/our.js' %}"></script>
 </body>
 </html>
 
