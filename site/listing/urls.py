@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path
 from . import views
 
@@ -11,4 +13,4 @@ urlpatterns = [
     path('more.html', views.more, name='more'),
     path('search.html', views.search, name='search'),
     path('apply_filters', views.apply_filters, name='apply_filters'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
