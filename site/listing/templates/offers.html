@@ -15,21 +15,20 @@
 <body>
     
     <div class="filter-container">
-
         <button id="vegetarian-button" class="filter-button" onclick='buttonClick("vegetarian-button")'>Vegetarian</button>
         <button id="vegan-button" class="filter-button" onclick='buttonClick("vegan-button")'>Vegan</button>
         <button id="glutten-button" class="filter-button" onclick='buttonClick("glutten-button")'>Gluten-Free</button>
-        <button id="PR-button"class="filter-button" onclick="buttonClick('PR-button')">Puertorican</button>
-        <button id='pasta-button'class="filter-button" onclick="buttonClick('pasta-button')">Pasta</button>
-        <button id='burgers-button'class="filter-button" onclick="buttonClick('burgers-button')">Burgers</button>
-        <button id='sandwich-button'class="filter-button" onclick="buttonClick('sandwich-button')">Sandwiches</button>
-        <button id='chicken-button'class="filter-button" onclick="buttonClick('chicken-button')">Chicken</button>
-        <button id='fish-button'class="filter-button" onclick="buttonClick('fish-button')">Fish</button>
-        <button id='pork-button'class="filter-button" onclick="buttonClick('pork-button')">Pork</button>
-        <button id='meren-button'class="filter-button" onclick="buttonClick('meren-button')">Merendero Colegial</button>
-        <button id='come-button'class="filter-button" onclick="buttonClick('come-button')">Comedero Colegial</button>
-
+        <button id="PR-button" class="filter-button" onclick="buttonClick('PR-button')">Puertorican</button>
+        <button id='pasta-button' class="filter-button" onclick="buttonClick('pasta-button')">Pasta</button>
+        <button id='burgers-button' class="filter-button" onclick="buttonClick('burgers-button')">Burgers</button>
+        <button id='sandwich-button' class="filter-button" onclick="buttonClick('sandwich-button')">Sandwiches</button>
+        <button id='chicken-button' class="filter-button" onclick="buttonClick('chicken-button')">Chicken</button>
+        <button id='fish-button' class="filter-button" onclick="buttonClick('fish-button')">Fish</button>
+        <button id='pork-button' class="filter-button" onclick="buttonClick('pork-button')">Pork</button>
+        <button id='meren-button' class="filter-button" onclick="buttonClick('meren-button')">Merendero Colegial</button>
+        <button id='come-button' class="filter-button" onclick="buttonClick('come-button')">Comedero Colegial</button>
     </div>
+    
     
 </body>
 
@@ -87,6 +86,10 @@
             </ul>
         </nav>
     </div>
+
+    <div id="listing-table">
+        {% include 'table_list.html' %}
+    </div>
 </main>
 
 <footer>
@@ -102,6 +105,7 @@
         </div>
     </nav>
 </footer>
+<script src="{% static 'js/offers.js' %}"></script>
 
 </body>
 </html>

@@ -59,6 +59,7 @@ function buttonClick(name) {
   }
 
   window.onload = function() {
+    selectedFilters.push("bestseller")
     var xhr = new XMLHttpRequest();
     // Pass the selected filters to the python view updater
     xhr.open("GET", "apply_filters?filters=" + selectedFilters, true);
@@ -76,3 +77,4 @@ function buttonClick(name) {
     };
     xhr.send();
   }
+  
