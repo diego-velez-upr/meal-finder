@@ -23,6 +23,7 @@ var selectedFilters = [];
 function buttonClick(name) {
     const button = document.getElementById(name);
 
+    console.log(selectedFilters.length);
     if (button.classList.contains('active')) {
         console.log('Removed ' + button.id + ' filter!');
         button.classList.remove('active')
@@ -34,6 +35,8 @@ function buttonClick(name) {
     } else {
         console.log('Applied ' + button.id + ' filter!');
         button.classList.add('active');
+        console.log(button.textContent.toLowerCase());
+
         selectedFilters.push(button.textContent.toLowerCase())
     }
 
@@ -55,4 +58,21 @@ function buttonClick(name) {
     xhr.send();
   }
 
-
+  window.onload = function() {
+    var xhr = new XMLHttpRequest();
+    // Pass the selected filters to the python view updater
+    xhr.open("GET", "apply_filters?filters=" + selectedFilters, true);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.onload = function() {
+        // Received successful response
+        if (xhr.status === 200) {
+            // Get div where table of food goes
+            var div = document.getElementById("listing-table");
+            // Update food slots
+            div.innerHTML = xhr.responseText;
+        } else {
+            console.log("Request failed. Returned status code: " + xhr.status);
+        }
+    };
+    xhr.send();
+  }
